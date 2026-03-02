@@ -5,26 +5,26 @@ description: "How to handle API keys and configuration settings securely in Next
 
 # Managing Environment Variables
 
-Environment variables are a crucial part of any modern web application. They allow you to store sensitive information like API keys, database URLs, and configuration settings that differ between development and production.
+Environment variables are a crucial part of any modern web application. They allow you to store sensitive information like API keys, database URLs, and configuration settings that differ between development and production environments.
 
-## What is a .env File?
+## Local Development with .env.local
 
-Instead of hard-coding values into your code, we store them in environment files.
+In Next.js, you can manage environment variables locally by creating a file named `.env.local` in the root of your project.
 
-- `.env.local`: Used for local development. This file should **never** be committed to Git.
-- `.env.example`: A template file containing only the keys (no values). Commit this to Git to help other developers set up the project.
-
-## Creating Local Environment Variables
-
-Create a file named `.env.local` in your root directory:
-
+### Example .env.local Content
 ```env
-NEXT_PUBLIC_API_URL=https://api.example.com
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
 ANALYTICS_KEY=your_secret_key_here
 ```
 
-### Security Best Practices
-Your `.gitignore` file (created by `create-next-app`) should already include `.env`. Double-check to ensure your secrets stay private:
+### Accessing Variables in Code
+Next.js makes it easy to access these variables using `process.env`. 
+
+- **Client-side**: Prefix variables with `NEXT_PUBLIC_` to make them accessible in the browser (e.g., `process.env.NEXT_PUBLIC_API_URL`).
+- **Server-side**: Variables without the prefix are only available in the Node.js runtime (e.g., `process.env.ANALYTICS_KEY`), keeping them secure from being exposed to users.
+
+### Security First: .gitignore
+To ensure your secrets are never leaked to GitHub, `create-next-app` automatically adds `.env` files to your `.gitignore`. Always double-check that these lines exist:
 
 ```text
 # .gitignore
@@ -32,19 +32,19 @@ Your `.gitignore` file (created by `create-next-app`) should already include `.e
 .env
 ```
 
-![.env.local Example](https://via.placeholder.com/800x400?text=Example+.env.local+File)
+## Adding Variables in Vercel Dashboard
 
-## Adding Variables in Vercel
+Since `.env.local` is not pushed to GitHub, you need to manually add these variables to your Vercel project settings for your live site.
 
-To use these variables in your live application, you must also add them to Vercel:
+### Step-by-Step Instructions:
+1. Log in to your [Vercel Dashboard](https://vercel.com/dashboard).
+2. Click on your project (**my-awesome-app**).
+3. Navigate to the **Settings** tab at the top.
+4. Select **Environment Variables** from the left-hand sidebar.
+5. In the **"Add New"** section:
+   - **Key**: Enter the name (e.g., `NEXT_PUBLIC_API_URL`).
+   - **Value**: Enter the production value (e.g., `https://api.myapp.com`).
+6. Select the environments (Production, Preview, Development) where this variable should apply.
+7. Click **Save**.
 
-1. In your project dashboard, go to **Settings → Environment Variables**.
-2. Enter the **Key** and **Value** for each variable.
-3. Save your changes.
-
-![Vercel Env Vars Interface](https://via.placeholder.com/800x400?text=Vercel+Environment+Variables+Interface)
-
-Once added, Vercel will automatically inject these variables into your build and runtime environments.
-
-### Pro-Tip
-Use the `NEXT_PUBLIC_` prefix for variables you want to access in the browser. Variables *without* this prefix are only available on the server for extra security.
+**Note**: After adding or changing environment variables in Vercel, you must trigger a new deployment (e.g., by pushing a commit) for the changes to take effect in your live application.
