@@ -1,0 +1,40 @@
+{
+  "name": "Next.js + Vercel Guide",
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#000000",
+    "light": "#333333",
+    "dark": "#ffffff"
+  },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction"
+      ]
+    },
+    {
+      "group": "Step-by-Step Guide",
+      "pages": [
+        "create-nextjs",
+        "github-setup",
+        "connect-vercel",
+        "environment-variables",
+        "deployment"
+      ]
+    },
+    {
+      "group": "Wrap Up",
+      "pages": [
+        "conclusion"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "github": "https://github.com/vercel/next.js"
+  }
+}

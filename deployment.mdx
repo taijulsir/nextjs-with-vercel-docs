@@ -1,0 +1,47 @@
+---
+title: "Step 5: Deployment Steps"
+description: "How to deploy your Next.js application into production with Vercel and Git."
+---
+
+# Deploying Your Application
+
+One of Vercel’s best features is its automatic CI/CD (Continuous Integration and Continuous Deployment) pipeline. Every time you push to your GitHub repository, your site is updated.
+
+## Triggering a Deployment
+
+Vercel listens for changes in your GitHub repository’s `main` branch.
+
+### Push Changes to Main
+Whenever you’re ready for production, push your code:
+
+```bash
+git add .
+git commit -m "Add new feature"
+git push origin main
+```
+
+Your `main` branch push will trigger a **production deployment**.
+
+## Preview Deployments
+If you create a new branch or open a Pull Request (PR), Vercel will create a **preview deployment**. This lets you test changes and share a temporary URL with your team before merging into the main branch.
+
+![Successful Deployment Preview](https://via.placeholder.com/800x400?text=Preview+Deployment+Url)
+
+## Configuring a Custom Domain
+
+By default, Vercel gives you a subdomain (e.g., `my-awesome-app.vercel.app`). To use your own domain:
+
+1. Go to **Settings → Domains**.
+2. Enter your domain name and follow the DNS configuration instructions.
+
+![Custom Domain Setup](https://via.placeholder.com/800x400?text=Custom+Domain+Setup+Page)
+
+## Monitoring Your Build
+You can monitor your build's status and logs in the Vercel dashboard:
+
+1. Click on the **Deployments** tab.
+2. View real-time logs and potential build errors.
+
+![Build Logs Dashboard](https://via.placeholder.com/800x400?text=Build+Logs+and+Status)
+
+Once the status turns to `Ready`, your site is officially live for the world to see!

@@ -1,0 +1,50 @@
+---
+title: "Step 4: Managing Environment Variables"
+description: "How to handle API keys and configuration settings securely in Next.js and Vercel."
+---
+
+# Managing Environment Variables
+
+Environment variables are a crucial part of any modern web application. They allow you to store sensitive information like API keys, database URLs, and configuration settings that differ between development and production.
+
+## What is a .env File?
+
+Instead of hard-coding values into your code, we store them in environment files.
+
+- `.env.local`: Used for local development. This file should **never** be committed to Git.
+- `.env.example`: A template file containing only the keys (no values). Commit this to Git to help other developers set up the project.
+
+## Creating Local Environment Variables
+
+Create a file named `.env.local` in your root directory:
+
+```env
+NEXT_PUBLIC_API_URL=https://api.example.com
+ANALYTICS_KEY=your_secret_key_here
+```
+
+### Security Best Practices
+Your `.gitignore` file (created by `create-next-app`) should already include `.env`. Double-check to ensure your secrets stay private:
+
+```text
+# .gitignore
+.env*.local
+.env
+```
+
+![.env.local Example](https://via.placeholder.com/800x400?text=Example+.env.local+File)
+
+## Adding Variables in Vercel
+
+To use these variables in your live application, you must also add them to Vercel:
+
+1. In your project dashboard, go to **Settings → Environment Variables**.
+2. Enter the **Key** and **Value** for each variable.
+3. Save your changes.
+
+![Vercel Env Vars Interface](https://via.placeholder.com/800x400?text=Vercel+Environment+Variables+Interface)
+
+Once added, Vercel will automatically inject these variables into your build and runtime environments.
+
+### Pro-Tip
+Use the `NEXT_PUBLIC_` prefix for variables you want to access in the browser. Variables *without* this prefix are only available on the server for extra security.

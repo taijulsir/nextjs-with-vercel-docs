@@ -1,0 +1,66 @@
+---
+title: "Step 1: Creating a Next.js App"
+description: "How to initialize your Next.js project using the command line."
+---
+
+# Creating a Next.js Application
+
+Next.js provides a streamlined process for creating new projects with a CLI tool called `create-next-app`.
+
+## What is Next.js?
+Next.js is a React framework that enables features like server-side rendering (SSR) and static site generation (SSG) out of the box. It’s perfect for everything from simple blogs to high-performance e-commerce sites.
+
+## Initializing the Project
+
+Open your favorite terminal and run the following command to start the creation process:
+
+```bash
+npx create-next-app@latest my-awesome-app
+```
+
+### Choose Your Options
+When prompted, we recommend the following configuration for a modern, production-ready application:
+
+- **TypeScript?**: Yes (Recommended for type safety)
+- **ESLint?**: Yes (Keeps your code clean)
+- **Tailwind CSS?**: Yes (A utility-first CSS framework for rapid styling)
+- **src/ directory?**: Yes (Maintains a clean root folder)
+- **App Router?**: Yes (Recommended for the latest Next.js features)
+- **import alias (@/*)?**: Yes (Easier file imports)
+
+### Terminal Output
+Upon completion, your terminal output will look like this:
+
+![Terminal Creation Output](https://via.placeholder.com/800x400?text=Terminal+output+of+create-next-app)
+
+## Exploring the Folder Structure
+Once the installation is complete, navigate into your folder:
+
+```bash
+cd my-awesome-app
+```
+
+Your directory should look something like this:
+
+```text
+my-awesome-app/
+├── src/
+│   └── app/
+│       ├── layout.tsx
+│       └── page.tsx
+├── public/
+├── next.config.mjs
+├── package.json
+└── tsconfig.json
+```
+
+![Folder Structure Screenshot](https://via.placeholder.com/800x400?text=Project+folder+structure+after+creation)
+
+## Running Your Project Locally
+To see your app in action, start the development server:
+
+```bash
+npm run dev
+```
+
+Your app is now live at [http://localhost:3000](http://localhost:3000)!

@@ -1,0 +1,40 @@
+---
+title: "Step 3: Connect Vercel"
+description: "How to connect your GitHub repository and deploy your first project on Vercel."
+---
+
+# Connecting the Project to Vercel
+
+Vercel is the easiest platform for deploying Next.js. Here’s how you can deploy your GitHub repository in just a few clicks.
+
+## Log in to Vercel
+
+1. Go to [vercel.com](https://vercel.com/login).
+2. Choose **Continue with GitHub** to link your accounts.
+3. Authorize Vercel to access your public or private repositories.
+
+![Vercel Login Screen](https://via.placeholder.com/800x400?text=Vercel+Dashboard+Import+Screen)
+
+## Import the Project
+
+1. From the Vercel dashboard, click the **Add New...** button and select **Project**.
+2. Find your `my-awesome-app` repository and click **Import**.
+
+![Import Github Repo](https://via.placeholder.com/800x400?text=Repo+Selection+Import)
+
+## Configure Project Settings
+
+Most of the time, Vercel will automatically detect that you're using Next.js. However, it's good to double-check:
+
+- **Framework Preset**: Next.js (should be auto-detected)
+- **Root Directory**: `./` (default)
+- **Build and Output Settings**: Default (no changes needed)
+
+### Deploying the Application
+Once you're satisfied with the configuration, click the **Deploy** button.
+
+![Deployment Settings Screen](https://via.placeholder.com/800x400?text=Deployment+Settings+Screen)
+
+Vercel will start the build process. After a minute or two, your site will be live!
+
+You’ll receive a success message and a link to your new website. Stay tuned as we learn about environment variables in the next step.

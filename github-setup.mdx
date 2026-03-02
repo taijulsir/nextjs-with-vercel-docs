@@ -1,0 +1,56 @@
+---
+title: "Step 2: GitHub Setup"
+description: "How to initialize your Git repository and push your project to GitHub."
+---
+
+# Setting up a GitHub Repository
+
+Now that your project is ready, let's host it on GitHub. This is essential for version control and deploying to Vercel.
+
+## Create a New Repository
+
+1. Go to [GitHub.com/new](https://github.com/new).
+2. Enter your **Repository name** (e.g., `my-awesome-app`).
+3. Select **Public** or **Private** (Vercel works with both).
+4. Do **not** initialize with a README, license, or .gitignore (as `create-next-app` already provided these).
+5. Click **Create repository**.
+
+![GitHub New Repo Creation](https://via.placeholder.com/800x400?text=GitHub+New+Repo+Creation+Page)
+
+## Connecting Your Local Project
+
+Back in your terminal (inside the `my-awesome-app` folder), follow these steps:
+
+### Initialize Git
+```bash
+git init
+```
+
+### Add Files and Commit
+```bash
+git add .
+git commit -m "Initial commit"
+```
+
+### Create a Main Branch
+```bash
+git branch -M main
+```
+
+### Connect to Remote Repository
+```bash
+git remote add origin https://github.com/your-username/my-awesome-app.git
+```
+*(Replace `your-username` with your real GitHub username.)*
+
+### Push to GitHub
+```bash
+git push -u origin main
+```
+
+## Verify Your Repository
+Refresh your GitHub repository page. You should now see all your project files and folders beautifully listed.
+
+![GitHub Final Repository](https://via.placeholder.com/800x400?text=GitHub+Repository+with+Files)
+
+Great! Your project is now safely stored on GitHub.
