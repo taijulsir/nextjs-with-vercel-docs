@@ -1,8 +1,8 @@
 {
   "name": "Next.js + Vercel Guide",
   "logo": {
-    "light": "/images/logo.webp",
-    "dark": "/images/logo.webp"
+    "light": "/images/dark-logo.webp",
+    "dark": "/images/white-logo.png"
   },
   "favicon": "/favicon.png",
   "colors": {

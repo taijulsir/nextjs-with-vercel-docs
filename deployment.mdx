@@ -25,7 +25,17 @@ Your `main` branch push will trigger a **production deployment**.
 ## Preview Deployments
 If you create a new branch or open a Pull Request (PR), Vercel will create a **preview deployment**. This lets you test changes and share a temporary URL with your team before merging into the main branch.
 
-![Successful Deployment Preview](https://via.placeholder.com/800x400?text=Preview+Deployment+Url)
+### How to View Preview Deployments
+
+1. Go to your project in Vercel dashboard.
+2. Click the **Deployments** tab (shows all builds/deployments).
+3. At the top of the Deployments list, find the filter dropdown (it usually says "All Branches" or "All" by default).
+4. Change the filter to **Preview** (or select "Preview" from the environment/branch dropdown).
+5. Now the page updates to show only preview deployments.
+   - If you have an active preview build (from a branch or PR), you'll see the list here.
+   - The explanation box appears: "If you create a new branch or open a Pull Request (PR), Vercel will create a preview deployment..."
+
+![Deployment Preview List](/images/vercel-deploy-preview-list.png)
 
 ## Configuring a Custom Domain
 
@@ -34,7 +44,7 @@ By default, Vercel gives you a subdomain (e.g., `my-awesome-app.vercel.app`). To
 1. Go to **Settings → Domains**.
 2. Enter your domain name and follow the DNS configuration instructions.
 
-![Custom Domain Setup](https://via.placeholder.com/800x400?text=Custom+Domain+Setup+Page)
+![Custom Domain Setup](/images/vercel-custom-domain-setup.png)
 
 ## Monitoring Your Build
 You can monitor your build's status and logs in the Vercel dashboard:
@@ -42,7 +52,7 @@ You can monitor your build's status and logs in the Vercel dashboard:
 1. Click on the **Deployments** tab.
 2. View real-time logs and potential build errors.
 
-![Build Logs Dashboard](https://via.placeholder.com/800x400?text=Build+Logs+and+Status)
+![Build Logs Dashboard](/images/vercel-build-logs.png)
 
 Once the status turns to `Ready`, your site is officially live for the world to see!
 
